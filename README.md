@@ -51,3 +51,17 @@ PGPASSWORD=postgres
 OPENAI_API_KEY=sk-...  
 OPENAI_MODEL=gpt-5 # 또는 gpt-4o 등 사용 가능한 최신 모델명  
 OPENAI_EMBED_MODEL=text-embedding-3-large  
+
+
+## 가상환경 설정
+```
+$ uv python install 3.13   
+$ uv venv --python 3.13
+$ uv init
+$ uv add fastmcp psycopg2-binary openai
+```
+
+## Postgres 확장 (서버에서 1회)
+```
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
+```

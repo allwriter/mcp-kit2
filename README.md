@@ -65,3 +65,29 @@ $ uv add fastmcp psycopg2-binary openai
 ```
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 ```
+
+## VS Code / Cursor 연결 (.cursor/mcp.json)
+프로젝트 루트에 .cursor/mcp.json 생성:
+```
+{
+  "mcpServers": {
+    "dev-assignment-mcp": {
+      "command": "python",
+      "args": ["server.py"],
+      "cwd": "/절대/혹은/프로젝트/경로",
+      "env": {
+        "PGHOST": "localhost",
+        "PGPORT": "5432",
+        "PGDATABASE": "mcpdb",
+        "PGUSER": "postgres",
+        "PGPASSWORD": "postgres",
+        "OPENAI_API_KEY": "sk-... (옵션)",
+        "OPENAI_MODEL": "gpt-5",
+        "OPENAI_EMBED_MODEL": "text-embedding-3-large"
+      }
+    }
+  }
+}
+
+```
+VS Code(또는 Cursor/Claude Desktop) 재시작 → 채팅창에서 MCP 함수 사용 가능.

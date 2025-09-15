@@ -70,7 +70,7 @@ CREATE EXTENSION IF NOT EXISTS pg_trgm;
 ```
 
 ## VS Code / Cursor 연결 (.cursor/mcp.json)
-프로젝트 루트에 .cursor/mcp.json 생성:
+Cursor Setting -> MCP & Integrations > MCP Tools 활성화  
 ```
 {
   "mcpServers": {
@@ -93,4 +93,3 @@ CREATE EXTENSION IF NOT EXISTS pg_trgm;
 }
 
 ```
-VS Code(또는 Cursor/Claude Desktop) 재시작 → 채팅창에서 MCP 함수 사용 가능.

@@ -10,18 +10,20 @@
 
 ## 기능(요약)
 
-### 관리자
-- `admin_add_developer(project, name, experience_years, skills[], work_experiences, workload=0)`
-- `admin_add_task(title, requirements, required_skills[], project=None)` → **자동 배정 + 연관 과거 TASK 추천**
-- `admin_set_weights(...)` → 자동 분배 가중치 조정
-- `seed_demo_data()` → 샘플 데이터 삽입
-
-### 개발자
-- `dev_my_tasks(developer_name)` → 내 업무 + 연관 과거 TASK 리스트
-- `dev_complete_task(task_id, resolution_notes, resolution_method, related_db)` → 완료 + 기록
-
-### 검색
-- `search_similar_tasks(query, top_k=5)` → 자연어로 과거 유사 TASK 탐색
+1. 개발자 관리  
+admin_add_developer - 개발자 등록  
+get_all_developers - 전체 개발자 목록 조회  
+  
+2. 업무 관리  
+admin_add_task - 업무 등록 (자동 배정)  
+get_all_tasks - 전체 업무 목록 조회  
+dev_my_tasks - 개발자별 업무 조회  
+dev_complete_task - 업무 완료 처리  
+search_similar_tasks - 유사 업무 검색  
+  
+3. 시스템 관리  
+seed_demo_data - 데모 데이터 초기화  
+admin_set_weights - 배정 알고리즘 가중치 설정  
 
 ---
 
@@ -56,8 +58,9 @@ OPENAI_EMBED_MODEL=text-embedding-3-large
 ## 가상환경 설정
 ```
 $ uv python install 3.13   
-$ uv venv --python 3.13
 $ uv init
+$ uv venv --python 3.13.7
+$ source .venv/bin/activate  
 $ uv add fastmcp psycopg2-binary openai
 ```
 

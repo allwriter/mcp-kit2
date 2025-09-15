@@ -93,3 +93,6 @@ Cursor Setting -> MCP & Integrations > MCP Tools 활성화
 }
 
 ```
+
+<img width="481" height="489" alt="image" src="https://github.com/user-attachments/assets/854edab1-ed24-4d5a-b9f7-2af2570d852b" />
+
